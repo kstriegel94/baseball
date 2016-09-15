@@ -127,7 +127,7 @@ function run(ts) {
   	neg_speedy = Crafty.math.randomNumber(-400,-300);
 
 	//baseball.check_size();
-	baseball.reflect_baseball(4,4);
+	//baseball.reflect_baseball(4,4);
 
 	if(is_game_over()) {
 		Crafty.enterScene('GameOver');
