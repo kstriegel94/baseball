@@ -13,7 +13,7 @@ Crafty.defineScene('Start', function(attrs) {
 
   title.attr({x: (Crafty.viewport._width - title.w) / 2});
 
-  var start_button = Crafty.e('Button')
+  var start_button = Crafty.e('Button, Text, Canvas')
     .attr({x: 0, y: 100})
     .text('START')
     .bind('Click', function() {
