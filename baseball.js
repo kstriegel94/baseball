@@ -41,7 +41,7 @@ var baseball = {
 		.attr({rotation:0})
 		//.attr({alpha: 1.0})
 		//.tween({rotation:2160, w:75, h:75}, 10000) 
-		.tween({w:75, h:75}, 7000)
+		.tween({w:75, h:75}, 5000)
 		.checkHits('Solid')
 		.collision()
 		.onHit('wall_left', function() {
