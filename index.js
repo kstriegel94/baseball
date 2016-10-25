@@ -37,11 +37,14 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-app.set('port', 5555);
+//app.set('port', 5454);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //listen for requests
-var server = app.listen(app.get('port'), function() {
-	var port = server.address().port;
-	console.log('Connected to port ' + port);
+//var server = app.listen(app.get('port'), function() {
+//	var port = server.address().port;
+//	console.log('Connected to port ' + port);
+
+var server = app.listen(process.env.PORT || 3000, function(){
+	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
