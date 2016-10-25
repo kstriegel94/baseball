@@ -1,3 +1,5 @@
+var hit = 0;
+
 Crafty.defineScene('Play', function() {
 
 var bounds_width = 600;
@@ -7,7 +9,6 @@ var speed = 4;
 var max_baseball_size = 50;
 
 var miss = 0;
-var hit = 0;
 
 var hit_score = Crafty.e('2D, DOM, Text').attr({x:100, y:50}).text('Hits: ' + hit);
 var miss_score = Crafty.e('2D, DOM, Text').attr({x:200, y:50}).text('Strikes: ' + miss);
@@ -42,11 +43,11 @@ function choose_speed(x, y)
 {
 	if(Math.random() < 0.5)
 	{
-		console.log('speed: ' + x)
+		//console.log('speed: ' + x)
 		return x;
 	}
 
-	console.log('speed: ' + y);
+	//console.log('speed: ' + y);
 	return y;
 }
 
@@ -59,7 +60,7 @@ function hit_ball()
 	if(crosshair_entity.hit('baseball'))
 	{
 		frame = 0;
-		console.log('entered in checkhits');
+		//console.log('entered in checkhits');
 		hit++;
 		baseball.destroy();
 		hit_score.text('Hits: ' + hit);
@@ -119,24 +120,24 @@ var crosshair_entity = Crafty.e('2D, DOM, crosshair, Fourway, Collision, Keyboar
 	})
 	.bind('KeyDown', function(e) {
 		if(e.key == Crafty.keys.SPACE){
-			console.log('hit');
+			//console.log('hit');
 			hit_ball();
 		}
 		else if (e.key == dir_s){
-			console.log('in south');
+			//console.log('in south');
 			this.y = this.y + 1;
 		}
 		else if (e.key == dir_e){
 			this.x = this.x + 1;
-			console.log('in east');
+			//console.log('in east');
 		}
 		else if (e.key == dir_n){
 			this.y = this.y - 1;
-			console.log('in north');
+			//console.log('in north');
 		}
 		else if (e.key == dir_w){
 			this.x = this.x - 1;
-			console.log('in west');
+			//console.log('in west');
 		}
 		
 	});
@@ -160,13 +161,14 @@ function run(ts) {
 
 	if(is_game_over()) {
 		Crafty.enterScene('GameOver');
+		hit = 0;
 	}
 	else {
 		
 		if (frame == 300)
 		{
 			frame = 0;
-			console.log('time');
+			//console.log('time');
 			miss++;
 			miss_score.text('Strikes: ' + miss);
 			baseball.destroy();
