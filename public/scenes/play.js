@@ -159,7 +159,7 @@ function run(ts) {
  	posy = Crafty.math.randomInt(300,500); //posY
 
 	if(is_game_over()) {
-		Crafty.enterScene('Play');
+		Crafty.enterScene('GameOver');
 	}
 	else {
 		
