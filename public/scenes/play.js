@@ -85,7 +85,7 @@ function hit_ball()
 	{
 		if(Crafty.audio.isPlaying('hit_sound'))
 		{
-			Crafty.audio.remove('hit_sound');
+			Crafty.audio.stop('hit_sound');
 		}
 		frame = 0;
 		hit++;
