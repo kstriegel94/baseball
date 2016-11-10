@@ -1,7 +1,7 @@
 Crafty.defineScene('Start', function(attrs) {
 Crafty.audio.add('ballgame', 'sounds/Ballgame.mp3');
 Crafty.audio.play('ballgame',-1);
-  
+
   Crafty.e('2D, Canvas, Color')
     .color('#0D6522')
     .attr({w: 900, h: 800});
@@ -12,26 +12,26 @@ Crafty.e('2D, Canvas, DOM, logo').attr({x: 150, y:50});
 Crafty.sprite('img/play_button.png', {play_button:[0,0,322,342]});
 
   var direction = Crafty.e('Canvas, Text')
-    .text('Use directional keys to move crosshair')
+    .text('USE DIRECTIONAL KEYS TO MOVE CROSSHAIR')
     .textColor('white')
     .textFont({
-      family: 'Adidas Half Block 2016',
+      family: 'Passion One',
       size: '30px',
     });
 
   var direction2 = Crafty.e('Canvas, Text')
-    .text('Use spacebar to hit the ball')
+    .text('USE SPACEBAR TO HIT THE BALL')
     .textColor('white')
     .textFont({
-      family: 'Adidas Half Block 2016',
+      family: 'Passion One',
       size: '30px',
     });
 
   var direction3 = Crafty.e('Canvas, Text')
-    .text('Three strikes and you lose')
+    .text('THREE STRIKES AND YOU LOSE')
     .textColor('white')
     .textFont({
-      family: 'Adidas Half Block 2016',
+      family: 'Passion One',
       size: '30px',
     });
 

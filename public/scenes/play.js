@@ -11,38 +11,38 @@ var max_baseball_size = 50;
 var miss = 0;
 
 var hit_digit = Crafty.e('2D, DOM, Text')
-	.attr({x:165, y:53})
+	.attr({x:173, y:45})
 	.text(hit)
 	.textColor('orange')
 	.textFont({
-		family: 'Digital-7',
+		family: 'Atomic Age',
+		size: '30px',
+	});
+
+var miss_digit = Crafty.e('2D, DOM, Text')
+	.attr({x: 360, y: 45})
+	.text(miss)
+	.textColor('orange')
+	.textFont({
+		family: 'Atomic Age',
 		size: '30px',
 	});
 
 var hit_score = Crafty.e('2D, DOM, Text')
 	.attr({x:100, y:50})
-	.text('Hits: ')
+	.text('HITS: ')
 	.textColor('white')
 	.textFont({
-		family: 'Adidas Half Block 2016',
+		family: 'Passion One',
 		size: '30px',
 	});
 
-var miss_digit = Crafty.e('2D, DOM, Text')
-	.attr({x: 310, y: 53})
-	.text(miss)
-	.textColor('orange')
-	.textFont({
-		family: 'Digital-7',
-		size: '30px',
-	})
-
 var miss_score = Crafty.e('2D, DOM, Text')
-	.attr({x:200, y:50})
-	.text('Strikes: ')
+	.attr({x:250, y:50})
+	.text('STRIKES: ')
 	.textColor('white')
 	.textFont({
-		family: 'Adidas Half Block 2016',
+		family: 'Passion One',
 		size: '30px',
 	});
 
@@ -91,7 +91,7 @@ function hit_ball()
 		hit++;
 		baseball.destroy();
 		Crafty.audio.play('hit_sound');
-		hit_score.text('Hits: ');
+		hit_score.text('HITS: ');
 		hit_digit.text(hit);
 		baseball.addBaseball('baseball', choose_speed(speedx, neg_speedx), choose_speed(speedy, neg_speedy), posx, posy);
 	}
@@ -99,7 +99,7 @@ function hit_ball()
 	{
 		frame = 0;
 		miss++;
-		miss_score.text('Strikes: ');
+		miss_score.text('STRIKES: ');
 		miss_digit.text(miss);
 		baseball.destroy();
 		baseball.addBaseball('baseball', choose_speed(speedx, neg_speedx), choose_speed(speedy, neg_speedy), posx, posy);
@@ -200,7 +200,7 @@ function run(ts) {
 		{
 			frame = 0;
 			miss++;
-			miss_score.text('Strikes: ');
+			miss_score.text('STRIKES: ');
 			miss_digit.text(miss);
 			baseball.destroy();
 			baseball.addBaseball('baseball', choose_speed(speedx, neg_speedx), choose_speed(speedy, neg_speedy), posx, posy);			

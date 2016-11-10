@@ -21,21 +21,36 @@ Crafty.defineScene('GameOver', function(attrs) {
     });*/
 
   var score_text = Crafty.e('Canvas, Text')
-    .text('Final Score: ' + hit)
+    .text('FINAL SCORE')
     .textColor('white')
     .textFont({
-      family: 'Adidas Half Block 2016',
+      family: 'Passion One',
+      size: '42px',
+    });
+
+  var score_digit = Crafty.e('Canvas, Text')
+    .text(hit)
+    .textColor('orange')
+    .textFont({
+      family: 'Atomic Age',
       size: '42px',
     });
 
   //title.attr({x: (Crafty.viewport._width - title.w) / 2});
   score_text.attr({x: (Crafty.viewport._width-score_text.w) / 2, y: 300});
+  score_digit.attr({x: ((Crafty.viewport._width-score_text.w) / 2) + 220, y: 294});
 
   var replay_button = Crafty.e('Button, replay_button, Canvas')
     .attr({x: 0, y: 400, w:150, h:150})
     .bind('Click', function() {
         Crafty.enterScene('Play');
         hit = 0;
+      })
+    .bind('KeyDown', function(e) {
+      if(e.key == Crafty.keys.SPACE){
+        Crafty.enterScene('Play');
+        hit = 0;
+      }
     });
 
   replay_button.attr({x: (Crafty.viewport._width - replay_button.w) / 2});
